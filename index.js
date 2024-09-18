@@ -9,7 +9,7 @@ const cors_1 = __importDefault(require("cors"));
 const route_1 = __importDefault(require("./routes/route"));
 const app = (0, express_1.default)();
 const port = 3000;
-mongoose_1.default.connect('mongodb://localhost:27017');
+mongoose_1.default.connect('mongodb+srv://muhammednehyan9895:I915et0f1j@cluster0.ybzp1dx.mongodb.net/Connect');
 app.use('/uploads', express_1.default.static('uploads'));
 app.use(express_1.default.json());
 const corsOptions = {
