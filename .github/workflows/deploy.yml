@@ -33,5 +33,6 @@ jobs:
           cd ~/MEAN-CRUD-SERVER
           git pull origin main
           npm install
+          npm run build
           pm2 restart all
         debug: true
