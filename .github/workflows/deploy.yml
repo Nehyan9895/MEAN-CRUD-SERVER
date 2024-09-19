@@ -27,7 +27,7 @@ jobs:
         host: ${{ secrets.EC2_HOST }}
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
-        port: 22
+        port: 3000
         script: |
           cd ~/projects/MEAN-CRUD-SERVER
           git pull origin main
