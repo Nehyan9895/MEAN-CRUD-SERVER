@@ -29,6 +29,7 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         port: 3000
         script: |
+          ssh -vvv -i /home/ubuntu/.ssh/id_rsa ubuntu@ip-172-31-10-118
           cd ~/projects/MEAN-CRUD-SERVER
           git pull origin main
           npm install
