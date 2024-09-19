@@ -36,4 +36,4 @@ jobs:
           cd ~/projects/MEAN-CRUD-SERVER # Replace with the actual project path
           git pull origin main
           npm install
-          pm2 restart app  # Restart the Node.js app with PM2
+          pm2 restart all  # Restart the Node.js app with PM2
