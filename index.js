@@ -19,5 +19,5 @@ const corsOptions = {
 app.use((0, cors_1.default)(corsOptions));
 app.use(express_1.default.json());
 app.use('/', route_1.default);
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send('Hello World! Nice to meet you'));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
