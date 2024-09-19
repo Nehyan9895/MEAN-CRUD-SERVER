@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -34,3 +34,4 @@ jobs:
           git pull origin main
           npm install
           pm2 restart all
+        debug: true
