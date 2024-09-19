@@ -30,7 +30,7 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         port: 22  # Ensure this is set to the SSH port, usually 22
         script: |
-          cd ~/projects/MEAN-CRUD-SERVER
+          cd ~/MEAN-CRUD-SERVER
           git pull origin main
           npm install
           pm2 restart all
