@@ -10,21 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Check out the code from GitHub
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Step 2: Set up Node.js (adjust version if needed)
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
 
-    # Step 3: Install dependencies
     - name: Install dependencies
       run: npm install
 
-    # Step 4: Deploy to EC2 instance
     - name: Deploy to EC2 via SSH
       uses: appleboy/ssh-action@v0.1.1
       with:
@@ -33,7 +29,7 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         port: 22
         script: |
-          cd ~/projects/MEAN-CRUD-SERVER # Replace with the actual project path
+          cd ~/projects/MEAN-CRUD-SERVER
           git pull origin main
           npm install
-          pm2 restart all  # Restart the Node.js app with PM2
+          pm2 restart all
