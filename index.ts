@@ -28,7 +28,7 @@ app.use(express.json());
 app.use('/', router)
 
 
-app.get('/', (req, res) => res.send('Hello World! Nice to meet you'))
+app.get('/', (req, res) => res.send('Hello World! Nice to meet you!'))
 
 
 
