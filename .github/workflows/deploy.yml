@@ -21,25 +21,15 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H 172.31.10.118 >> ~/.ssh/known_hosts
-
     - name: Deploy to EC2 via SSH
       uses: appleboy/ssh-action@v0.1.3
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
-        port: 3000
-        run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@172.31.10.118 << 'EOF'
-            cd ~/projects/MEAN-CRUD-SERVER
-            git pull origin main
-            npm install
-            pm2 restart all
-          EOF
-
+        port: 22  # Ensure this is set to the SSH port, usually 22
+        script: |
+          cd ~/projects/MEAN-CRUD-SERVER
+          git pull origin main
+          npm install
+          pm2 restart all
