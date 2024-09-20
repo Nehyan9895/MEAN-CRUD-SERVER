@@ -11,6 +11,7 @@ const port = 3000
 mongoose.connect('mongodb+srv://muhammednehyan9895:I915et0f1j@cluster0.ybzp1dx.mongodb.net/Connect')
 
 
+
 app.use('/uploads', express.static('uploads'));
 
 
